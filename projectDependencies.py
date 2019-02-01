@@ -35,20 +35,12 @@ def addScriptsToPackageJson(projectPath):
 
     with open("package.json", "r") as f:
         data = json.load(f)
-    
-    # print(data["scripts"]["test"])
 
     data["scripts"] = {} # empty scripts - initializing data["scripts"] to an empty dictionary to add scripts
 
     data["scripts"]["start"] = "nodemon --exec babel-node server.js --ignore public"
     data["scripts"]["dev"] = "webpack -wd"
     data["scripts"]["sass"] = "node-sass -w sass/ -o public/css"
-
-    # data["scripts"].append({
-    #     "start" : "nodemon --exec babel-node server.js --ignore public",
-    #     "dev" : "webpack -wd",
-    #     "sass" : "node-sass -w sass/ -o public/css"
-    # })
 
     with open("package.json", "w") as f:
         json.dump(data, f, indent=4)

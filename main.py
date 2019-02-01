@@ -3,6 +3,7 @@ from setupDirectories import setupDirectories
 from initProject import createPackageJson
 from projectDependencies import installDependencies, addScriptsToPackageJson
 from initialFiles import addInitialFiles
+from projectConfiguration import addConfigFiles, writeConfigurations
 
 textColor = "\033[1;32;40m"
 
@@ -37,6 +38,22 @@ def main():
     print(textColor, "Adding initial files..")
 
     addInitialFiles(projectPath, apiPath, publicPath, sassPath, srcPath)
+
+    # Add config files
+
+    print(textColor, "Adding configuration files..")
+
+    addConfigFiles(projectPath)
+
+    print(textColor, "Added configuration files!")
+
+    # Write configurations
+
+    print(textColor, "Writing configurations..")
+
+    writeConfigurations(projectPath, srcPath, publicJsPath)
+
+    print(textColor, "Projects configurations have been wirtten!")
 
 if __name__ == "__main__":
     main()
