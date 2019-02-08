@@ -40,6 +40,8 @@ def setupDirectories(projectPath):
 
     viewsPath = projectPath+"/views"
 
+    directories.append(viewsPath)
+
     for directory in directories:
         os.makedirs(directory)
         print(textColor, "Added", directory, "folder! \n")

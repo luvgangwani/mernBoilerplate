@@ -5,9 +5,9 @@ textColor = "\033[1;32;40m"
 
 def installDependencies(projectPath):
 
-    devDependencies = ["axios", "body-parser", "bootstrap", "ejs", "express", "jquery", "mongodb", "node-sass", "popper.js", "prop-types", "react", "react-dom"] # list of dependencies for the development environment
+    devDependencies = ["axios", "body-parser", "bootstrap", "ejs", "express", "jquery", "mongodb", "node-sass", "node-sass-middleware", "popper.js", "prop-types", "react", "react-dom"] # list of dependencies for the development environment
 
-    projectDependencies = ["@babel/cli", "@babel/core", "@babel/node", "@babel/preset-env", "@babel/preset-react", "babel-eslint", "babel-loader", 'eslint', "eslint-plugin-react", "nodemon", "webpack", "webpack-cli"]  # dependencies global to the project
+    projectDependencies = ["@babel/cli", "@babel/core", "@babel/node", "@babel/preset-env", "@babel/preset-react", "babel-eslint", "babel-loader", 'eslint', "eslint-plugin-react", "nodemon", "webpack", "webpack-cli", "uglifyjs-webpack-plugin"]  # dependencies global to the project
 
     # install dev dependencies
 
@@ -23,7 +23,7 @@ def installDependencies(projectPath):
             print(textColor, devDependency, "installed! \n")
     
     for projDependency in projectDependencies:
-        out = subprocess.Popen(npmDevCommand + projDependency, stderr=subprocess.STDOUT, shell=True)
+        out = subprocess.Popen(npmProjCommand + projDependency, stderr=subprocess.STDOUT, shell=True)
         response, error = out.communicate()
         if error is None:
             print(textColor, projDependency, "installed! \n")
