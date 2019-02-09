@@ -57,8 +57,8 @@
 
 <p>Once the project is created, run the below commands(on different tabs/windows) to run the project</p>
 
-<code>npm start<code>
-<code>npm run dev<code>
-<code>npm sass<code>
+<code>npm start</code>
+<code>npm run dev</code>
+<code>npm sass</code>
 
 <p>The default port is set to &quot;3000&quot;, you can change the default port by changing the value of &quot;defaultPort&quot; in the &quot;writeConfigJs()&quot; function under the &quot;projectConfiguration.py&quot; file</p>
