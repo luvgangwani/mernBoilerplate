@@ -4,6 +4,7 @@ from initProject import createPackageJson
 from projectDependencies import installDependencies, addScriptsToPackageJson
 from initialFiles import addInitialFiles, addContentToInitialFiles
 from projectConfiguration import addConfigFiles, writeConfigurations
+from gitConfiguration import configureGitRepo
 
 textColor = "\033[1;32;40m"
 
@@ -25,9 +26,9 @@ def main():
 
     # Install dependencies
 
-    print(textColor, "Installing dependencies..")
+    # print(textColor, "Installing dependencies..")
     
-    installDependencies(projectPath)
+    # installDependencies(projectPath)
 
     # Add scripts to package.json
 
@@ -62,6 +63,35 @@ def main():
     writeConfigurations(projectPath, srcPath, publicJsPath)
 
     print(textColor, "Projects configurations have been written!")
+
+    # Git Configurations
+
+    gitConfirm = input("Do you wish to track this project on git?(Y/N) ")
+
+    configureGit = None
+
+    while configureGit is None:
+        if gitConfirm == "Y" or gitConfirm == "y":
+            configureGit = True
+        elif gitConfirm == "N" or gitConfirm == "n":
+            configureGit = False
+        else:
+            configureGit = None
+            print("Please enter Y for yes or N for no.")
+    
+    if not configureGit:
+        pass
+    else:
+        if configureGitRepo(projectPath):
+            print (".git folder has been created!")
+            print("Add the necessary configurations and follow the steps given on your github repo page!\n")
+        else:
+            print("There was some error in creating the .git folder.\n")
+
+    print("Project created!\n")
+    print("Server is listening at port 3000!\n")
+    print("Please open your browser and hit localhost:3000 !\n")
+    
 
 if __name__ == "__main__":
     main()
