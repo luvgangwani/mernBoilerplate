@@ -26,9 +26,9 @@ def main():
 
     # Install dependencies
 
-    # print(textColor, "Installing dependencies..")
+    print(textColor, "Installing dependencies..")
     
-    # installDependencies(projectPath)
+    installDependencies(projectPath)
 
     # Add scripts to package.json
 

@@ -132,13 +132,15 @@ def writeEslintConfigurations(projectPath):
 def writeConfigJs(projectPath):
 
     os.chdir(projectPath)
-
+    
+    defaultPort = 3000 # change this value to change the port
+    
     configJs = "// Enter project configurations (port, host, database configurations) in this file \n"
 
     configJs += "const env = process.env \n\n"
     configJs += "export default { \n"
     configJs += "\tnodeEnv : env.NODE_ENV || \"development\", \n"
-    configJs += "\tport : env.PORT || 3000, \n"
+    configJs += "\tport : env.PORT || " + str(defaultPort) + ", \n"
     configJs += "\thost : env.HOST || '0.0.0.0', \n}"
 
     writeToFile("config.js", configJs)
