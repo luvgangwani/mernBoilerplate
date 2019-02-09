@@ -64,3 +64,8 @@
 <p>The default port is set to &quot;3000&quot;, you can change the default port by changing the value of &quot;defaultPort&quot; in the &quot;writeConfigJs()&quot; function under the &quot;projectConfiguration.py&quot; file</p>
 
 <p>Open the browser and hit localhost:3000 or localhost:**port number** </p>
+
+<h2>Assumptions</h2>
+<ol>
+    <li>Node JS is installed in your system</li>
+</ol>
