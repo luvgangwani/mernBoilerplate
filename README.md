@@ -59,7 +59,7 @@
 
 <code>npm start</code><br>
 <code>npm run dev</code><br>
-<code>npm sass</code>
+<code>npm run sass</code>
 
 <p>The default port is set to &quot;3000&quot;, you can change the default port by changing the value of &quot;defaultPort&quot; in the &quot;writeConfigJs()&quot; function under the &quot;projectConfiguration.py&quot; file</p>
 
